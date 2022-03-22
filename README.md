@@ -1,2 +1,53 @@
 # tareaDeProgramacion1
 Detección y Emparejamiento de Rasgos
+
+El proyecto de divide en dos partes: 
+  1) Detección de rasgos y 
+  2) Emparejamiento de rasgos. 
+
+Se creará un solo programa que al inicio permita seleccionar una de estas dos opciones.
+El desarrollo del proyecto se realizará en GitHub y ahí mismo se realizará su documentación. Se evaluará el funcionamiento del programa, orden del código, comentarios y su documentación.
+
+Deberán compartir su proyecto enviando el enlace a irobledovega@gmail.com.
+Agregar un archivo al repositorio que contenga sus observaciones y conclusiones, además de la bibliografía consultada, incluir una referencia por cada método de
+detección de rasgos, estas se encuentran en la documentación de OpenCV.
+
+1. Detección de rasgos.- Se procesa una sola imagen para detectar los rasgos por medio de diferentes métodos, el objetivo es evaluar los resultados obtenidos con diferentes imágenes. Para esto es necesario revisar la documentación de cada método para entender su funcionamiento y poder definir correctamente sus parámetros de entrada.
+
+  1.1. Implementar los siguientes métodos para detección de rasgos disponibles en OpenCV:
+    • Good Features to Track
+    • FAST
+      • BRIEF
+    • ORB
+    • AGAST
+    • AKAZE
+    • BRISK
+    • KAZE
+    • SIFT
+    • SURF
+
+  1.2. El programa puede ser desarrollado en C++ o Python y deberá tener las siguientes características:
+    • Preguntar al usuario por el nombre de la imagen a procesar.
+    • Seleccionar el algoritmo deseado.
+    • Mostrar los resultados en una interfaz gráfica utilizando la función drawKeypoints().
+
+• Si el algoritmo tiene parámetros que el usuario pueda modificar, incluir controles en la interfaz (sliders) que permitan modificarlos y ver los cambios en
+tiempo real.
+
+NOTA: Algunos detectores solo funcionan para imágenes en niveles de gris, por lo que, si se desea procesar una imagen a color, será necesario convertirla a niveles de gris.
+
+2. Emparejamiento de rasgos.- Se procesan dos imágenes utilizando dos diferentes estrategias de emparejamiento: Fuerza bruta y FLANN. Cada estrategia puede ser implementada utilizando diferentes métodos de detección y descripción de rasgos. En el caso del emparejamiento de rasgos también es necesario revisar la documentación de cada método para entender su funcionamiento y poder definir correctamente sus parámetros de entrada.
+
+  2.1. Desarrollar un programa que pueda realizar el emparejamiento de rasgos entre dos imágenes mediante los siguientes métodos disponibles en OpenCV:
+    • Fuerza Bruta (Brute Force)
+    • FLANN (Fast Library for Approximate Nearest Neighbors)
+
+  2.2. El programa para el emparejamiento de rasgos deberá tener las siguientes características:
+    • Preguntar al usuario por los nombres de las dos imágenes a emparejar.
+    • Seleccionar el método para la detección y descripción de rasgos
+      o Métodos con descriptores de punto flotante: SIFT, SURF y KAZE
+      o Métodos con descriptores binarios: BRIEF, BRISK, ORB y AKAZE
+    • Seleccionar el método de emparejamiento:
+      o Si el método es Fuerza Bruta se utiliza la distancia entre descriptores basada en la norma L1 o L2 cuando el descriptor es de punto flotante y la distancia de          Hamming cuando los descriptores son binarios.
+      o Si el método es FLANN se utiliza KD-trees con 5 árboles si el descriptor es de punto flotante y LSH si el descriptor es binario.
+    • Mostrar los resultados en una interfaz gráfica utilizando la función drawMatches().
